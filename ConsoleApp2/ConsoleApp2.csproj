@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="InputModel.cs" />
     <Compile Include="InputModelImporter.cs" />
+    <Compile Include="OutputModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

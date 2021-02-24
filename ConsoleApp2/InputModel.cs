@@ -18,7 +18,7 @@ namespace ConsoleApp2
     public  class Team
     {
         public int TeamNumber;
-        public int TeamCapacity;
+        public int NumberOfTeams;
     }
 
     public class Pizza

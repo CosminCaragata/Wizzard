@@ -12,12 +12,20 @@ namespace ConsoleApp2
         {
 
             InputModelImporter inputModelImporter = new InputModelImporter();
+
             List<InputModel> inputModels = inputModelImporter.ReadAll();
+
 
 
 
         }
 
+
+        public void ProcessInputModel(InputModel inputModel)
+        {
+            inputModel.Pizzas = inputModel.Pizzas.OrderByDescending(x => x.NumberOfIncredients).ToList();
+
+        }
 
 
     }

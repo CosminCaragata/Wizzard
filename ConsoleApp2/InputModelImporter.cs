@@ -46,19 +46,19 @@ namespace ConsoleApp2
             InputModel.Teams = new List<Team>();
             InputModel.Teams.Add(new Team()
             {
-                TeamCapacity = int.Parse(Splits[1]),
+                NumberOfTeams = int.Parse(Splits[1]),
                 TeamNumber = 1
             });
 
             InputModel.Teams.Add(new Team()
             {
-                TeamCapacity = int.Parse(Splits[2]),
+                NumberOfTeams = int.Parse(Splits[2]),
                 TeamNumber = 2
             });
 
             InputModel.Teams.Add(new Team()
             {
-                TeamCapacity = int.Parse(Splits[3]),
+                NumberOfTeams = int.Parse(Splits[3]),
                 TeamNumber = 3
 
             });
@@ -83,14 +83,12 @@ namespace ConsoleApp2
                 InputModel.Pizzas.Add(new Pizza()
                 {
                     NumberOfIncredients = int.Parse(splits[0]),
-                    Ingredients = IncredientsOnPizza
-                });
-            }                    
+                    Ingredients = IncredientsOnPizza,
+                    PizzaIndex = i
+                }); ;
+            }     
 
-            
-            file.Close();
-
-            
+            file.Close();            
             return InputModel;
             
 
