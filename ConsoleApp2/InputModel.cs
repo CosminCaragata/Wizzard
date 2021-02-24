@@ -17,7 +17,7 @@ namespace ConsoleApp2
 
     public  class Team
     {
-        public int TeamNumber;
+        public int TeamTypeNumber;
         public int NumberOfTeams;
     }
 

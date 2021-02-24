@@ -23,8 +23,19 @@ namespace ConsoleApp2
 
         public void ProcessInputModel(InputModel inputModel)
         {
-            inputModel.Pizzas = inputModel.Pizzas.OrderByDescending(x => x.NumberOfIncredients).ToList();
+            inputModel.Pizzas = inputModel.Pizzas.OrderByDescending(x => x.NumberOfIncredients).ToList();           
 
+        }
+
+
+        public static int GetPizzaScore(List<Pizza> pizzas)
+        {
+            return pizzas.Select(x => x.Ingredients).ToList().Distinct().Count();
+        }
+
+        public static int GetWasteScore(List<Pizza> pizzas)
+        { 
+            return pizzas.Select(x => x.Ingredients).Count() - pizzas.Select(x => x.Ingredients).ToList().Distinct().Count();
         }
 
 
