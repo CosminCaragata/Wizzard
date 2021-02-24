@@ -47,19 +47,19 @@ namespace ConsoleApp2
             InputModel.Teams.Add(new Team()
             {
                 NumberOfTeams = int.Parse(Splits[1]),
-                TeamNumber = 1
+                TeamTypeNumber = 2
             });
 
             InputModel.Teams.Add(new Team()
             {
                 NumberOfTeams = int.Parse(Splits[2]),
-                TeamNumber = 2
+                TeamTypeNumber = 3
             });
 
             InputModel.Teams.Add(new Team()
             {
                 NumberOfTeams = int.Parse(Splits[3]),
-                TeamNumber = 3
+                TeamTypeNumber = 4
 
             });
 
