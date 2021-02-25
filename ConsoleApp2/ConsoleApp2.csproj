@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Combinations.cs" />
+    <Compile Include="CosminLogic.cs" />
     <Compile Include="InputModel.cs" />
     <Compile Include="InputModelImporter.cs" />
     <Compile Include="OutputModel.cs" />
