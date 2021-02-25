@@ -6,17 +6,11 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp2
 {
-    public class OutputModel
+    public class CosminLogic
     {
-        List<OutputLine> OutputLines = new List<OutputLine>();
+        public void Process(InputModel inputModel)
+        { 
 
-
-
+        }
     }
-
-
-    public class OutputLine
-    {  
-    }
-
 }
