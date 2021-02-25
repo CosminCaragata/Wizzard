@@ -8,23 +8,6 @@ namespace ConsoleApp2
 {
     public class InputModel
     {
-        public int numbeOfPizzas;
-        public List<Team> Teams;
-        public List<String> IngredientTypes;
-        public List<Pizza> Pizzas;
-        
     }
-
-    public  class Team
-    {
-        public int TeamTypeNumber;
-        public int NumberOfTeams;
-    }
-
-    public class Pizza
-    {
-        public int NumberOfIncredients;
-        public List<String> Ingredients;
-        public int PizzaIndex;
-    }
+  
 }

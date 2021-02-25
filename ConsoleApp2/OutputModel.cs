@@ -13,9 +13,7 @@ namespace ConsoleApp2
 
 
     public class OutputLine
-    {
-        public Team team;
-        public List<Pizza> Pizzas = new List<Pizza>();
+    {    
 
     }
 

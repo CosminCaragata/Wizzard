@@ -10,34 +10,22 @@ namespace ConsoleApp2
     {
         static void Main(string[] args)
         {
-
             InputModelImporter inputModelImporter = new InputModelImporter();
-
             List<InputModel> inputModels = inputModelImporter.ReadAll();
 
-
-
-
+            ProcessInputModel(inputModels[1]);
         }
 
 
-        public void ProcessInputModel(InputModel inputModel)
+        public static void ProcessInputModel(InputModel inputModel)
         {
-            inputModel.Pizzas = inputModel.Pizzas.OrderByDescending(x => x.NumberOfIncredients).ToList();           
 
         }
 
-
-        public static int GetPizzaScore(List<Pizza> pizzas)
+        public static void ProcessMatches(int margin, InputModel inputModel, int numberOfIncredientsOnPizzaOne, int numberOfIncredientsOnPizzaTwo)
         {
-            return pizzas.Select(x => x.Ingredients).ToList().Distinct().Count();
+
         }
-
-        public static int GetWasteScore(List<Pizza> pizzas)
-        { 
-            return pizzas.Select(x => x.Ingredients).Count() - pizzas.Select(x => x.Ingredients).ToList().Distinct().Count();
-        }
-
-
+ 
     }
 }

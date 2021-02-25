@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Combinations.cs" />
     <Compile Include="InputModel.cs" />
     <Compile Include="InputModelImporter.cs" />
     <Compile Include="OutputModel.cs" />
