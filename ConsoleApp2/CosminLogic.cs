@@ -8,7 +8,7 @@ namespace ConsoleApp2
 {
     public class CosminLogic
     {
-        public void Process(InputModel inputModel)
+        public static void Process(InputModel inputModel)
         { 
 
         }
