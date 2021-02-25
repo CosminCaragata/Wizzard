@@ -32,16 +32,15 @@ namespace ConsoleApp2
             foreach (var outputInntersection in this.OutputIntersections)
             {
                 outputBuilder.AppendLine($"{outputInntersection.intersection.IntersectionNumnber}");
-                outputBuilder.AppendLine($"{outputInntersection.intersection.StreetsWhichGoToIntersection.Count}");
-                foreach (var ordersOnIntersection in outputInntersection.ordersOnIntersections)
+                outputBuilder.AppendLine($"{outputInntersection.ordersOnIntersections.Count}");
 
-                    foreach (var orderIntersection in outputInntersection.ordersOnIntersections)
-                    {
-                        outputBuilder.AppendLine($"{orderIntersection.street} {orderIntersection.duration}");
-                    }
+                foreach (var orderIntersection in outputInntersection.ordersOnIntersections)
+                {
+                    outputBuilder.AppendLine($"{orderIntersection.street} {orderIntersection.duration}");
+                }
             }
 
-            if(File.Exists("output.txt"))
+            if (File.Exists("output.txt"))
             {
                 File.Delete("output.txt");
             }
