@@ -17,8 +17,9 @@ namespace ConsoleApp2
         public List<Street> SteetsInProblem = new List<Street>();
 
         List<PathOfCar> PathsOfCars = new List<PathOfCar>();
-    }
 
+
+    }
 
     public class Street
     {
@@ -33,6 +34,22 @@ namespace ConsoleApp2
         public int CardIndexNumber;
         public int NumberOfStreetsOnCar;
         public List<Street>  StreetsOnPath;
+    }
+
+    public class Intersection
+    {
+        public int IntersectionNumnber;
+        public List<Street> StreetsWhichGoToIntersection;
+        public List<Street> StreetsWhichStartFromIntersection;
+        public LightStatus LightStatus = LightStatus.Red;
+    }
+
+
+    public enum LightStatus
+    { 
+        Red = 0,
+        Green = 1
+
     }
 
 }
