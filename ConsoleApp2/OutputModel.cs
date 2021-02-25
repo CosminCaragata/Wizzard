@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,7 +25,28 @@ namespace ConsoleApp2
             }
         }
 
-        
+        public void WriteToFile()
+        {
+            StringBuilder outputBuilder = new StringBuilder();
+            outputBuilder.AppendLine($"{this.OutputIntersections.Length}");
+            foreach (var outputInntersection in this.OutputIntersections)
+            {
+                outputBuilder.AppendLine($"{outputInntersection.intersection.IntersectionNumnber}");
+                outputBuilder.AppendLine($"{outputInntersection.intersection.StreetsWhichGoToIntersection.Count}");
+                foreach (var ordersOnIntersection in outputInntersection.ordersOnIntersections)
+
+                    foreach (var orderIntersection in outputInntersection.ordersOnIntersections)
+                    {
+                        outputBuilder.AppendLine($"{orderIntersection.street} {orderIntersection.duration}");
+                    }
+            }
+
+            if(File.Exists("output.txt"))
+            {
+                File.Delete("output.txt");
+            }
+            File.AppendAllText("output.txt", outputBuilder.ToString());
+        }
     }
 
 

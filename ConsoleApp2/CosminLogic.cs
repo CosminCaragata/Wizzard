@@ -69,6 +69,7 @@ namespace ConsoleApp2
                 }
             }
 
+            outputModel.WriteToFile();
         }
 
 
