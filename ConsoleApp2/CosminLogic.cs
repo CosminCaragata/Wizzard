@@ -53,10 +53,27 @@ namespace ConsoleApp2
                 });
             }
 
+            foreach (var outputIntersection in outputModel.OutputIntersections)
+            {
+                foreach (var street1 in outputIntersection.intersection.StreetsWhichGoToIntersection)
+                {
+                    outputIntersection.ordersOnIntersections.Add(new OrderOnIntersection()
+                    {
+                        duration = 1,
+                        street = street1
+
+                    }); 
+                }
+            }
+
+            /*
             for (int i = 0; i < inputModel.DurationOfSimulation; i++)
             {
                 foreach (var intersectionInSimulation in Simulation.SimulationIntersectionOrders)
                 {
+
+                    
+                    /*
                     int index = intersectionInSimulation.Intersection.StreetsWhichGoToIntersection.IndexOf(intersectionInSimulation.SelectedStreet);
                     index = (index + 1) % intersectionInSimulation.Intersection.StreetsWhichGoToIntersection.Count;
                     intersectionInSimulation.SelectedStreet = intersectionInSimulation.Intersection.StreetsWhichGoToIntersection[index];
@@ -67,8 +84,8 @@ namespace ConsoleApp2
                         street = intersectionInSimulation.SelectedStreet
                     });
                 }
-            }
-
+            }*/
+            /*
             //squashTime
             foreach (var outputIntersection in outputModel.OutputIntersections)
             {
@@ -84,8 +101,9 @@ namespace ConsoleApp2
                     else
                     { i++; }
                 }
+            }*/
 
-            }
+            outputModel.WriteToFile();
 
         }
 
@@ -97,6 +115,7 @@ namespace ConsoleApp2
             public int TickNumber;
 
             public List<SimulationIntersectionOrder> SimulationIntersectionOrders = new List<SimulationIntersectionOrder>();
+         
         }
 
         public class SimulationIntersectionOrder

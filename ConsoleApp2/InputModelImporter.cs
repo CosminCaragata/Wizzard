@@ -10,7 +10,7 @@ namespace ConsoleApp2
     {
         public List<InputModel> ReadAll()
         {
-            string source = "E:\\Test\\";
+            string source = "D:\\Test\\";
             List<InputModel> models = new List<InputModel>();
 
             models.Add(this.Read(source + "a.txt"));
@@ -76,12 +76,18 @@ namespace ConsoleApp2
                 };
 
 
+
+                /*
                 for (int j = 1; j < carSplits.Length; j++)
                 {
                     pathOfCAr.StreetsOnPath.Add(inputModel.StreetsInProblem.First(x => x.StreetName == carSplits[j]));
                 }
 
                 inputModel.PathsOfCars.Add(pathOfCAr);
+                inputModel.Cars.Add(new Car()
+                {
+                    
+                });*/
             }
 
             file.Close();

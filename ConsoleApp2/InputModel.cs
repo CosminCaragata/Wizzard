@@ -19,6 +19,8 @@ namespace ConsoleApp2
         public List<PathOfCar> PathsOfCars = new List<PathOfCar>();
 
         public List<Intersection> Intersections = new List<Intersection>();
+
+        public List<Car> Cars = new List<Car>();
     }
 
     public class Street
@@ -38,8 +40,16 @@ namespace ConsoleApp2
     {
         public int CardIndexNumber;
         public int NumberOfStreetsOnCar;
-        public List<Street>  StreetsOnPath;
+        public List<Street> StreetsOnPath;
     }
+
+    public class Car
+    {
+        public PathOfCar path = new PathOfCar();
+        public string currentStreet;
+        public int duration;
+    }
+
 
     public class Intersection
     {
