@@ -15,8 +15,8 @@ namespace ConsoleApp2
 
             models.Add(this.Read(source + "a.txt"));
             models.Add(this.Read(source + "b.txt"));
-            models.Add(this.Read(source + "c.txt"));
-            models.Add(this.Read(source + "d.txt"));
+            //models.Add(this.Read(source + "c.txt"));
+           // models.Add(this.Read(source + "d.txt"));
             models.Add(this.Read(source + "e.txt"));
             models.Add(this.Read(source + "f.txt"));
 

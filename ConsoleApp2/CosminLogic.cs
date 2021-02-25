@@ -9,8 +9,8 @@ namespace ConsoleApp2
     public class CosminLogic
     {
         public static void Process(InputModel inputModel)
-        { 
-
+        {
+            CreteIntersection(inputModel);
         }
 
 
@@ -32,6 +32,53 @@ namespace ConsoleApp2
                 inputModel.Intersections[street.StartingIntersection].StreetsWhichStartFromIntersection.Add(street);
                 inputModel.Intersections[street.EndingIntersection].StreetsWhichGoToIntersection.Add(street);
             }
+        }
+
+
+        public static void GameOn(InputModel inputModel)
+        {
+            OutputModel outputModel = new OutputModel();
+            outputModel.InputModel = inputModel;
+            var Simulation = new Simulation();
+            Simulation.InputModel = inputModel;
+
+            foreach (var inter in inputModel.Intersections)
+            {
+                Simulation.SimulationIntersectionOrders.Add(new SimulationIntersectionOrder()
+                {
+                //    IntersectionNumber = inter.IntersectionNumnber,
+                    SelectedStreet = inter.StreetsWhichGoToIntersection.First()
+                });
+            }
+
+            for (int i = 0; i < inputModel.DurationOfSimulation; i++)
+            {
+                Simulation.TickNumber++;
+
+                
+
+                outputModel.IntersectionOrders.Add(new IntersectionOrders()
+                {
+                 //   intersection 
+                });
+            }
+
+        }
+
+
+        public class Simulation
+        {
+            public InputModel InputModel;
+
+            public int TickNumber;
+
+            public List<SimulationIntersectionOrder> SimulationIntersectionOrders;
+        }
+
+        public class SimulationIntersectionOrder
+        {            
+            public Street SelectedStreet;
+            public Intersection intersection;
         }
     }
 }

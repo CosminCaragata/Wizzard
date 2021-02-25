@@ -52,4 +52,10 @@ namespace ConsoleApp2
 
     }
 
+
+    public class Status : InputModel
+    {
+
+    }
+
 }
