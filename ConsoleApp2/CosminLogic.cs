@@ -25,13 +25,13 @@ namespace ConsoleApp2
                     StreetsWhichStartFromIntersection = new List<Street>(),
                     IntersectionNumnber = i,
                     LightStatus = LightStatus.Red
-                }) ;
+                });
             }
             foreach (var street in inputModel.StreetsInProblem)
             {
                 inputModel.Intersections[street.StartingIntersection].StreetsWhichStartFromIntersection.Add(street);
                 inputModel.Intersections[street.EndingIntersection].StreetsWhichGoToIntersection.Add(street);
-            }            
+            }
 
             GameOn(inputModel);
         }
@@ -55,21 +55,36 @@ namespace ConsoleApp2
 
             foreach (var outputIntersection in outputModel.OutputIntersections)
             {
+
+                Dictionary<Street, int> streetScores = new Dictionary<Street, int>();
+
+                foreach (var streetInIntersection in outputIntersection.intersection.StreetsWhichGoToIntersection)
+                {
+
+                    streetScores.Add(streetInIntersection, 0);
+                    foreach (var c in inputModel.PathsOfCars)
+                    {
+                        streetScores[streetInIntersection] += c.StreetsOnPath.Where(x => x.StreetName == streetInIntersection.StreetName).Count();
+
+                    }
+                }
+
                 foreach (var street1 in outputIntersection.intersection.StreetsWhichGoToIntersection)
                 {
                     outputIntersection.ordersOnIntersections.Add(new OrderOnIntersection()
                     {
-                        duration = 1,
+                        duration = streetScores[street1],
                         street = street1
 
-                    }); 
+                    });
                 }
             }
-        
+
             outputModel.WriteToFile();
 
             outputModel.WriteToFile();
         }
+
 
 
         public class Simulation
@@ -81,11 +96,11 @@ namespace ConsoleApp2
             public List<SimulationIntersectionOrder> SimulationIntersectionOrders = new List<SimulationIntersectionOrder>();
 
             List<Car> cars = new List<Car>();
-         
+
         }
 
         public class SimulationIntersectionOrder
-        {            
+        {
             public Street SelectedStreet;
             public Intersection Intersection;
             public int TimeElapsedUnchanged;

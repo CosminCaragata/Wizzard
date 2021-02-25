@@ -9,7 +9,7 @@ namespace ConsoleApp2
             InputModelImporter inputModelImporter = new InputModelImporter();
             List<InputModel> inputModels = inputModelImporter.ReadAll();
 
-            ProcessInputModel(inputModels[0]);
+            ProcessInputModel(inputModels[1]);
         }
 
 
