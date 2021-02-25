@@ -38,7 +38,7 @@ namespace ConsoleApp2
         public static void GameOn(InputModel inputModel)
         {
             OutputModel outputModel = new OutputModel();
-            outputModel.InputModel = inputModel;
+            outputModel.inputModel = inputModel;
             var Simulation = new Simulation();
             Simulation.InputModel = inputModel;
 
@@ -57,10 +57,7 @@ namespace ConsoleApp2
 
                 
 
-                outputModel.IntersectionOrders.Add(new IntersectionOrders()
-                {
-                 //   intersection 
-                });
+                
             }
 
         }
