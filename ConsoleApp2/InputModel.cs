@@ -14,11 +14,11 @@ namespace ConsoleApp2
         public int numberOfCars;
         public int BonusPoints;
 
-        public List<Street> SteetsInProblem = new List<Street>();
+        public List<Street> StreetsInProblem = new List<Street>();
 
-        List<PathOfCar> PathsOfCars = new List<PathOfCar>();
+        public List<PathOfCar> PathsOfCars = new List<PathOfCar>();
 
-        List<Intersection> Intersections = new List<Intersection>();
+        public List<Intersection> Intersections = new List<Intersection>();
     }
 
     public class Street
