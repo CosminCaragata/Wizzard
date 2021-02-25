@@ -19,6 +19,7 @@ namespace ConsoleApp2
 
         public static void ProcessInputModel(InputModel inputModel)
         {
+          //  CosminLogic.Process(inputModel);
 
         }
 
