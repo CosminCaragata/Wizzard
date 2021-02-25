@@ -8,6 +8,9 @@ namespace ConsoleApp2
 {
     public class OutputModel
     {
+        public int NumberOfScheduledIntersections { get; set; }
+
+        public 
         List<OutputLine> OutputLines = new List<OutputLine>();
 
 
@@ -16,7 +19,8 @@ namespace ConsoleApp2
 
 
     public class OutputLine
-    {  
+    {
+        
     }
 
 }
