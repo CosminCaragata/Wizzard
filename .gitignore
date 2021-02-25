@@ -361,3 +361,6 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 /.vs
+/ConsoleApp2/bin
+/ConsoleApp2/obj
+/.vs
