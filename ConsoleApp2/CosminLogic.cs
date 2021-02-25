@@ -105,6 +105,7 @@ namespace ConsoleApp2
 
             outputModel.WriteToFile();
 
+            outputModel.WriteToFile();
         }
 
 
