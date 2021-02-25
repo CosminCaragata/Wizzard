@@ -18,7 +18,7 @@ namespace ConsoleApp2
 
         List<PathOfCar> PathsOfCars = new List<PathOfCar>();
 
-
+        List<Intersection> Intersections = new List<Intersection>();
     }
 
     public class Street
