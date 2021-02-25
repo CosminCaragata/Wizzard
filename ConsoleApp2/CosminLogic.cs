@@ -69,6 +69,24 @@ namespace ConsoleApp2
                 }
             }
 
+            //squashTime
+            foreach (var outputIntersection in outputModel.OutputIntersections)
+            {
+                string lastStreetName = string.Empty;
+                for (int i = 0; i < outputIntersection.ordersOnIntersections.Count() - 1; )
+                {
+                    string currentStreetName = outputIntersection.ordersOnIntersections[i].street.StreetName;
+                    if (outputIntersection.ordersOnIntersections[i + 1].street.StreetName == currentStreetName)
+                    {
+                        outputIntersection.ordersOnIntersections[i].duration += outputIntersection.ordersOnIntersections[i + 1].duration;
+                        outputIntersection.ordersOnIntersections.Remove(outputIntersection.ordersOnIntersections[i + 1]);
+                    }
+                    else
+                    { i++; }
+                }
+
+            }
+
         }
 
 
@@ -85,6 +103,7 @@ namespace ConsoleApp2
         {            
             public Street SelectedStreet;
             public Intersection Intersection;
+            public int TimeElapsedUnchanged;
         }
     }
 }
