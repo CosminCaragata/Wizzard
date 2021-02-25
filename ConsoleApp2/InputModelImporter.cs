@@ -77,7 +77,7 @@ namespace ConsoleApp2
 
 
 
-                /*
+                
                 for (int j = 1; j < carSplits.Length; j++)
                 {
                     pathOfCAr.StreetsOnPath.Add(inputModel.StreetsInProblem.First(x => x.StreetName == carSplits[j]));
@@ -86,8 +86,10 @@ namespace ConsoleApp2
                 inputModel.PathsOfCars.Add(pathOfCAr);
                 inputModel.Cars.Add(new Car()
                 {
-                    
-                });*/
+                    path = pathOfCAr,
+                    currentStreet = pathOfCAr.StreetsOnPath.First(),
+                    duration = 0
+                });
             }
 
             file.Close();

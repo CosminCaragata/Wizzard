@@ -31,7 +31,7 @@ namespace ConsoleApp2
             {
                 inputModel.Intersections[street.StartingIntersection].StreetsWhichStartFromIntersection.Add(street);
                 inputModel.Intersections[street.EndingIntersection].StreetsWhichGoToIntersection.Add(street);
-            }
+            }            
 
             GameOn(inputModel);
         }
@@ -65,44 +65,7 @@ namespace ConsoleApp2
                     }); 
                 }
             }
-
-            /*
-            for (int i = 0; i < inputModel.DurationOfSimulation; i++)
-            {
-                foreach (var intersectionInSimulation in Simulation.SimulationIntersectionOrders)
-                {
-
-                    
-                    /*
-                    int index = intersectionInSimulation.Intersection.StreetsWhichGoToIntersection.IndexOf(intersectionInSimulation.SelectedStreet);
-                    index = (index + 1) % intersectionInSimulation.Intersection.StreetsWhichGoToIntersection.Count;
-                    intersectionInSimulation.SelectedStreet = intersectionInSimulation.Intersection.StreetsWhichGoToIntersection[index];
-
-                    outputModel.OutputIntersections[intersectionInSimulation.Intersection.IntersectionNumnber].ordersOnIntersections.Add(new OrderOnIntersection()
-                    {
-                        duration = 1,
-                        street = intersectionInSimulation.SelectedStreet
-                    });
-                }
-            }*/
-            /*
-            //squashTime
-            foreach (var outputIntersection in outputModel.OutputIntersections)
-            {
-                string lastStreetName = string.Empty;
-                for (int i = 0; i < outputIntersection.ordersOnIntersections.Count() - 1; )
-                {
-                    string currentStreetName = outputIntersection.ordersOnIntersections[i].street.StreetName;
-                    if (outputIntersection.ordersOnIntersections[i + 1].street.StreetName == currentStreetName)
-                    {
-                        outputIntersection.ordersOnIntersections[i].duration += outputIntersection.ordersOnIntersections[i + 1].duration;
-                        outputIntersection.ordersOnIntersections.Remove(outputIntersection.ordersOnIntersections[i + 1]);
-                    }
-                    else
-                    { i++; }
-                }
-            }*/
-
+        
             outputModel.WriteToFile();
 
             outputModel.WriteToFile();
@@ -116,6 +79,8 @@ namespace ConsoleApp2
             public int TickNumber;
 
             public List<SimulationIntersectionOrder> SimulationIntersectionOrders = new List<SimulationIntersectionOrder>();
+
+            List<Car> cars = new List<Car>();
          
         }
 

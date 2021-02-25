@@ -46,7 +46,7 @@ namespace ConsoleApp2
     public class Car
     {
         public PathOfCar path = new PathOfCar();
-        public string currentStreet;
+        public Street currentStreet;
         public int duration;
     }
 
