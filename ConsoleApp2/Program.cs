@@ -9,13 +9,13 @@ namespace ConsoleApp2
             InputModelImporter inputModelImporter = new InputModelImporter();
             List<InputModel> inputModels = inputModelImporter.ReadAll();
 
-            ProcessInputModel(inputModels[1]);
+            ProcessInputModel(inputModels[0]);
         }
 
 
         public static void ProcessInputModel(InputModel inputModel)
         {
-          //  CosminLogic.Process(inputModel);
+            CosminLogic.Process(inputModel);
 
         }
 

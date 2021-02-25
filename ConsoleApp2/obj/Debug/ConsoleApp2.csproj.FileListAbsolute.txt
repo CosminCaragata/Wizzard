@@ -10,3 +10,9 @@ D:\Hashcode\Hashcode\ConsoleApp2\bin\Debug\ConsoleApp2.pdb
 D:\Hashcode\Hashcode\ConsoleApp2\obj\Debug\ConsoleApp2.csproj.CoreCompileInputs.cache
 D:\Hashcode\Hashcode\ConsoleApp2\obj\Debug\ConsoleApp2.exe
 D:\Hashcode\Hashcode\ConsoleApp2\obj\Debug\ConsoleApp2.pdb
+D:\Hashcode\Hashcode\ConsoleApp2\bin\Debug\a.txt
+D:\Hashcode\Hashcode\ConsoleApp2\bin\Debug\b.txt
+D:\Hashcode\Hashcode\ConsoleApp2\bin\Debug\c.txt
+D:\Hashcode\Hashcode\ConsoleApp2\bin\Debug\d.txt
+D:\Hashcode\Hashcode\ConsoleApp2\bin\Debug\e.txt
+D:\Hashcode\Hashcode\ConsoleApp2\bin\Debug\f.txt

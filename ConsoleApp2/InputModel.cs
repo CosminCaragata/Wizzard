@@ -27,6 +27,11 @@ namespace ConsoleApp2
         public int StartingIntersection;
         public int EndingIntersection;
         public int TimeToCross;
+
+        public override string ToString()
+        {
+            return StreetName;
+        }
     }
 
     public class PathOfCar

@@ -10,15 +10,15 @@ namespace ConsoleApp2
     {
         public List<InputModel> ReadAll()
         {
-            string source = AppDomain.CurrentDomain.BaseDirectory;
+            string source = "D:\\Test\\";
             List<InputModel> models = new List<InputModel>();
 
             models.Add(this.Read(source + "a.txt"));
             models.Add(this.Read(source + "b.txt"));
             //models.Add(this.Read(source + "c.txt"));
            // models.Add(this.Read(source + "d.txt"));
-            models.Add(this.Read(source + "e.txt"));
-            models.Add(this.Read(source + "f.txt"));
+         ////   models.Add(this.Read(source + "e.txt"));
+          //  models.Add(this.Read(source + "f.txt"));
 
             return models;
         }

@@ -32,12 +32,14 @@ namespace ConsoleApp2
                 inputModel.Intersections[street.StartingIntersection].StreetsWhichStartFromIntersection.Add(street);
                 inputModel.Intersections[street.EndingIntersection].StreetsWhichGoToIntersection.Add(street);
             }
+
+            GameOn(inputModel);
         }
 
 
         public static void GameOn(InputModel inputModel)
         {
-            OutputModel outputModel = new OutputModel();
+            OutputModel outputModel = new OutputModel(inputModel);
             outputModel.inputModel = inputModel;
             var Simulation = new Simulation();
             Simulation.InputModel = inputModel;
@@ -46,18 +48,25 @@ namespace ConsoleApp2
             {
                 Simulation.SimulationIntersectionOrders.Add(new SimulationIntersectionOrder()
                 {
-                //    IntersectionNumber = inter.IntersectionNumnber,
+                    Intersection = inter,
                     SelectedStreet = inter.StreetsWhichGoToIntersection.First()
                 });
             }
 
             for (int i = 0; i < inputModel.DurationOfSimulation; i++)
             {
-                Simulation.TickNumber++;
+                foreach (var intersectionInSimulation in Simulation.SimulationIntersectionOrders)
+                {
+                    int index = intersectionInSimulation.Intersection.StreetsWhichGoToIntersection.IndexOf(intersectionInSimulation.SelectedStreet);
+                    index = (index + 1) % intersectionInSimulation.Intersection.StreetsWhichGoToIntersection.Count;
+                    intersectionInSimulation.SelectedStreet = intersectionInSimulation.Intersection.StreetsWhichGoToIntersection[index];
 
-                
-
-                
+                    outputModel.OutputIntersections[intersectionInSimulation.Intersection.IntersectionNumnber].ordersOnIntersections.Add(new OrderOnIntersection()
+                    {
+                        duration = 1,
+                        street = intersectionInSimulation.SelectedStreet
+                    });
+                }
             }
 
         }
@@ -69,13 +78,13 @@ namespace ConsoleApp2
 
             public int TickNumber;
 
-            public List<SimulationIntersectionOrder> SimulationIntersectionOrders;
+            public List<SimulationIntersectionOrder> SimulationIntersectionOrders = new List<SimulationIntersectionOrder>();
         }
 
         public class SimulationIntersectionOrder
         {            
             public Street SelectedStreet;
-            public Intersection intersection;
+            public Intersection Intersection;
         }
     }
 }

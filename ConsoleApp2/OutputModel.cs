@@ -10,17 +10,21 @@ namespace ConsoleApp2
     {
         public int NumberOfScheduledIntersections { get; set; }
         public InputModel inputModel = new InputModel();
-        List<OutputIntersection> OutputIntersections = new List<OutputIntersection>();
+        public OutputIntersection[] OutputIntersections;
         public OutputModel(InputModel inputModel)
         {
-            foreach (var intersection in inputModel.Intersections)
+            OutputIntersections = new OutputIntersection[inputModel.Intersections.Count];
+            foreach (var intersect in inputModel.Intersections)
             {
-                OutputIntersections.Add(new OutputIntersection()
+                OutputIntersections[intersect.IntersectionNumnber] = new OutputIntersection()
                 {
-
-                })
+                    intersection = intersect,
+                    ordersOnIntersections = new List<OrderOnIntersection>()
+                };
             }
         }
+
+        
     }
 
 
